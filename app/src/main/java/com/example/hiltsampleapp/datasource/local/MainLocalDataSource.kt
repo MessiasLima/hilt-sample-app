@@ -1,0 +1,3 @@
+package com.example.hiltsampleapp.datasource.local
+
+interface MainLocalDataSource
