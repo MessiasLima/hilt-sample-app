@@ -12,6 +12,6 @@ class MainLocalDataSourceImpl @Inject constructor(
     }
 
     companion object{
-        private const val WELCOME_TEXT = "Be welcome to the World of modern Android Development"
+        const val WELCOME_TEXT = "Be welcome to the World of modern Android Development"
     }
 }
