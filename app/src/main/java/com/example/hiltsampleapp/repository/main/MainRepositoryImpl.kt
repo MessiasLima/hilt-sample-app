@@ -7,4 +7,8 @@ import javax.inject.Inject
 class MainRepositoryImpl @Inject constructor(
     private val mainRemoteDataSource: MainRemoteDataSource,
     private val mainLocalDataSource: MainLocalDataSource
-) : MainRepository
+) : MainRepository {
+    override suspend fun getWelcomeText(): String {
+        return mainLocalDataSource.getWelcomeText()
+    }
+}

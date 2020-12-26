@@ -1,3 +1,5 @@
 package com.example.hiltsampleapp.datasource.local
 
-interface MainLocalDataSource
+interface MainLocalDataSource {
+    suspend fun getWelcomeText(): String
+}

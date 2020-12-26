@@ -1,3 +1,5 @@
 package com.example.hiltsampleapp.repository.main
 
-interface MainRepository
+interface MainRepository {
+    suspend fun getWelcomeText(): String
+}
