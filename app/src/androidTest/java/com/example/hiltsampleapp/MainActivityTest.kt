@@ -14,15 +14,16 @@ import dagger.hilt.android.testing.HiltAndroidTest
 import dagger.hilt.android.testing.UninstallModules
 import org.junit.Rule
 import org.junit.Test
+import org.junit.rules.RuleChain
 
 @UninstallModules(DataSourceModule::class)
 @HiltAndroidTest
 class MainActivityTest {
-    @get:Rule
-    var hiltRule = HiltAndroidRule(this)
 
     @get:Rule
-    var activityRule = ActivityScenarioRule(MainActivity::class.java)
+    val ruleChain: RuleChain = RuleChain
+        .outerRule(HiltAndroidRule(this))
+        .around(ActivityScenarioRule(MainActivity::class.java))
 
     @BindValue
     @JvmField
